@@ -2370,12 +2370,12 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
       <convert type="ValueRange">800,2000</convert>
 <convert type="ConditionalShowHide" />
 </widget>
-    <!--<widget source="global.CurrentTime" render="Label" position="1088, 569" size="120, 26" font="Named; 21" valign="top" halign="right" backgroundColor="black" transparent="1" foregroundColor="white">
+    <widget source="global.CurrentTime" render="Label" position="1088, 569" size="120, 26" font="Named; 21" valign="top" halign="right" backgroundColor="black" transparent="1" foregroundColor="white">
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget source="global.CurrentTime" render="Label" position="1068, 595" size="140, 20" font="Named; 16" valign="top" halign="right" backgroundColor="black" transparent="1" foregroundColor="white">
       <convert type="ClockToText">Format:%d.%m.%Y</convert>
-    </widget>-->
+    </widget>
     <ePixmap name="new ePixmap" position="234, 520" size="36, 36" pixmap="ru_infinity_hd/icon/icon_stop.png" alphatest="on" transparent="1" />
   </screen>
   <screen name="CDInfo" position="90,100" size="1100,560" title="CDInfo">
