@@ -3262,6 +3262,22 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   <screen name="UnhandledKey" flags="wfNoBorder" position="620,30" size="80,80" title="UnhandledKey" zPosition="100" backgroundColor="transparent">
     <widget name="UnhandledKeyPixmap" pixmap="ru_infinity_hd/unhandled-key.png" position="0,0" size="80,80" alphatest="off" />
   </screen>
+  <screen name="VFD_GigaSetup" position="0,0" size="1280, 720" backgroundColor="un44000000" flags="wfNoBorder" title="GIGA LED Setup">
+    <ePixmap pixmap="skin_default/icons/clock.png" position="50, 30" zPosition="3" size="14,14" alphatest="on" />
+    <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
+      <convert type="ClockToText">Date</convert>
+    </widget>
+    <eLabel position="50, 102" size="1160, 1" backgroundColor="crypt_emm" zPosition="2" />
+    <ePixmap pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup.png" position="55, 155" size="300,500" />
+    <widget position="400, 170" size="810, 421" name="config" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" zPosition="2" />
+     <widget name="key_red" position="500, 635" size="200,36" font="Regular;20" halign="center" foregroundColor="red" valign="center" backgroundColor="black" transparent="1" zPosition="3" />
+    <widget name="key_green" position="750, 635" size="200,36" font="Regular;20" halign="center" foregroundColor="green" valign="center" backgroundColor="black" transparent="1" zPosition="3" />
+    <eLabel name="new eLabel" position="50, 625" size="1160, 1" backgroundColor="crypt_emm" zPosition="1" />
+    <eLabel name="new eLabel" position="910, 80" size="300, 22" font="Named; 20" backgroundColor="black" halign="right" transparent="1" text="GIGA LED Setup" foregroundColor="crypt_emm" />
+  </screen>
 <screen name="AudioSelection" position="300,180" size="680,330" title="Audio">
 <widget name="config" position="84,5" size="590,159" scrollbarMode="showNever" itemHeight="40" enableWrapAround="1" zPosition="3" />
 <widget source="key_red" render="Pixmap" pixmap="skin_default/buttons/key_red.png" position="5,5" size="35,25" alphatest="on">
@@ -3300,5 +3316,5 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 </convert>
 </widget>
 <eLabel position="0,167" size="680,1" backgroundColor="grey" zPosition="3" />
-</screen>	
+</screen>
 </skin>
