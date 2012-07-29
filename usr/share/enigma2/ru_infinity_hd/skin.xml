@@ -581,8 +581,11 @@
     <widget name="VKeyIcon" pixmap="ru_infinity_hd/buttons/key_text.png" position="55, 638" zPosition="10" size="35,25" transparent="1" alphatest="on"/>
     <widget name="HelpWindow" pixmap="skin_default/vkey_icon.png" position="160,315" zPosition="1" size="1,1" transparent="1" alphatest="on"/>
   </screen>
-  <screen name="NetworkSetup" position="130,140" size="460,330" title="Network Setup">
-    <widget name="menu" position="10,10" size="440,310"/>
+  <screen name="NetworkSetup" position="0,0" size="1280,720" flags="wfNoBorder" title="Network Setup">
+    <widget name="menu" position="55,120" zPosition="1" size="740,300" scrollbarMode="showOnDemand" transparent="1"/>
+  <eLabel position="815,100" size="2,518" backgroundColor="crypt_emm"/>
+  <eLabel position="55,618" size="1100,2" backgroundColor="crypt_emm"/>
+  <eLabel name="new eLabel" position="55,100" size="1100,2" backgroundColor="crypt_emm"/>
   </screen>
   <screen name="NameserverSetup" position="0,0" size="1280,720" flags="wfNoBorder" title="Nameserver Setup">
     <widget source="key_red" render="Label" position="140, 635" zPosition="1" foregroundColor="red" size="200, 36" font="Regular;20" halign="center" valign="center" backgroundColor="black" transparent="1"/>
@@ -654,7 +657,7 @@
     <widget source="key_red" render="Label" position="100, 635" foregroundColor="red" zPosition="1" size="200, 36" font="Regular;20" halign="center" valign="center" backgroundColor="black" transparent="1"/>
     <widget source="key_green" render="Label" position="330, 635" foregroundColor="green" zPosition="1" size="200, 36" font="Regular;20" halign="center" valign="center" backgroundColor="black" transparent="1"/>
     <widget source="key_yellow" render="Label" position="580, 635" foregroundColor="yellow" zPosition="1" size="200, 36" font="Regular;20" halign="center" valign="center" backgroundColor="black" transparent="1"/>
-    <widget source="list" render="Listbox" position="5,50" size="550,280" zPosition="10" scrollbarMode="showOnDemand">
+    <widget source="list" render="Listbox" position="55,113" size="742,442" zPosition="10" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent"> <!--  iface, name, description, interfacepng, defaultpng, activepng, divpng  -->
 				{"template": [
 					MultiContentEntryText(pos = (85, 6), size = (440, 28), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 1), # index 1 is the interfacename
