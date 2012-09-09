@@ -122,136 +122,174 @@
   </windowstyle>
   <!--infobar -->
   <screen name="InfoBar" zPosition="-1" position="0,40" size="1280,720" title="InfoBar" backgroundColor="transparent" flags="wfNoBorder">
-    <ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="ru_infinity_hd/infobar.png"/>
-    <widget position="190, 491" size="615, 28" source="session.CurrentService" render="Label" font="Named; 24" valign="center" halign="center" noWrap="1" backgroundColor="black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="white">
-      <convert type="ServiceName">Name</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="1070, 491" size="97, 28" font="Named; 24" valign="center" halign="right" backgroundColor="black" transparent="1" foregroundColor="white" zPosition="1">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="1163, 491" size="40, 28" font="Named; 15" valign="bottom" halign="right" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Format::%S</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="843, 491" size="212, 28" font="Named; 15" halign="right" backgroundColor="black" transparent="1" zPosition="1">
-      <convert type="ClockToText">Format:%d.%m.%Y</convert>
-    </widget>
-    <ePixmap pixmap="ru_infinity_hd/icon/i_dolby_no.png" position="1056, 565" size="36, 36" zPosition="1" alphatest="on"/>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_dolby.png" position="1056, 565" size="36, 36" zPosition="2" alphatest="on">
-      <convert type="ServiceInfo">IsMultichannel</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <ePixmap pixmap="ru_infinity_hd/icon/i_format_no.png" position="1018, 565" size="36, 36" zPosition="1" alphatest="on"/>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_format.png" position="1018, 565" size="36, 36" zPosition="2" alphatest="on">
-      <convert type="ServiceInfo">IsWidescreen</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <ePixmap pixmap="ru_infinity_hd/icon/i_txt_no.png" position="1094, 565" size="36, 36" zPosition="1" alphatest="on"/>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_txt.png" position="1094, 565" size="36, 36" zPosition="2" alphatest="on">
-      <convert type="ServiceInfo">HasTelext</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <ePixmap pixmap="ru_infinity_hd/icon/i_fta.png" position="1132, 565" size="36, 36" zPosition="1" alphatest="on"/>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_crypt.png" position="1132, 565" size="36, 36" zPosition="2" alphatest="on">
-      <convert type="ServiceInfo">IsCrypted</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <ePixmap pixmap="ru_infinity_hd/icon/i_sub_no.png" position="980, 565" size="36, 36" zPosition="1" alphatest="on"/>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_sub.png" position="980, 565" size="36, 36" zPosition="2" alphatest="on">
-      <convert type="ServiceInfo">SubservicesAvailable</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="session.RecordState" render="Pixmap" pixmap="ru_infinity_hd/icon/i_rec.png" position="854, 565" zPosition="3" size="36, 36" alphatest="on">
-      <convert type="ConditionalShowHide">Blink</convert>
-    </widget>
-    <ePixmap pixmap="ru_infinity_hd/icon/i_sd.png" position="1170,565" size="36,36" zPosition="1" alphatest="on"/>
-    <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_hd.png" position="1170,565" size="36,36" zPosition="2" alphatest="on">
-      <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">800,2000</convert>
-<convert type="ConditionalShowHide"/>
+ <ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="ru_infinity_hd/infobar.png" />
+  <ePixmap pixmap="ru_infinity_hd/ruanalogic.png" position="1083,508" size="90,90" alphatest="blend" />
+  <widget source="session.CurrentService" render="ChannelNumber" position="67,491" size="115,25" font="Named;24" halign="center" backgroundColor="black" transparent="1" foregroundColor="white" zPosition="1" />
+  <widget source="session.CurrentService" render="Label" font="Named;19" position="802,632" size="58,25" halign="right" foregroundColor="white" backgroundColor="black" transparent="1">
+    <convert type="ServiceInfo">VideoWidth</convert>
+  </widget>
+  <eLabel text="x" font="Named;17" position="864,632" size="13,25" halign="center" foregroundColor="white" backgroundColor="black" transparent="1" />
+  <widget source="session.CurrentService" render="Label" font="Named;19" position="881,632" size="58,25" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
+    <convert type="ServiceInfo">VideoHeight</convert>
+  </widget>
+  <eLabel text="AGC :" font="Named;19" position="952,632" size="70,21" halign="left" backgroundColor="black" transparent="1" foregroundColor="white" zPosition="1" />
+  <widget source="session.FrontendStatus" render="Label" position="1023,635" size="50,21" font="Named;15" halign="center" foregroundColor="white" backgroundColor="black" transparent="1">
+    <convert type="FrontendInfo">AGC</convert>
+  </widget>
+  <eLabel text="SNR :" font="Named;19" position="1080,632" size="70,21" halign="left" backgroundColor="black" transparent="1" foregroundColor="white" zPosition="1" />
+  <widget source="session.FrontendStatus" render="Label" position="1150,635" size="50,21" font="Named;15" halign="center" foregroundColor="white" backgroundColor="black" transparent="1">
+    <convert type="FrontendInfo">SNR</convert>
+  </widget>
+  <widget source="session.CurrentService" render="Label" position="81,632" size="100,21" backgroundColor="black" foregroundColor="white" font="Named;19" halign="left" valign="top" noWrap="1" zPosition="5" transparent="1">
+    <convert type="PliExtraInfo">TunerType</convert>
+  </widget>
+  <widget source="session.CurrentService" render="Label" position="193,632" size="85,21" backgroundColor="black" foregroundColor="white" font="Named;19" halign="left" valign="top" noWrap="1" zPosition="5" transparent="1">
+    <convert type="PliExtraInfo">OrbitalPosition</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Analogic" position="1095,520" size="65,65" borderColor="white" foregroundColor="white" linewidth="1" zPosition="2" alphatest="on">
+    <convert type="Analogiccon">AnalogSeconds</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Analogic" position="1105,529" size="47,47" borderColor="white" foregroundColor="white" linewidth="2" zPosition="3" alphatest="on">
+    <convert type="Analogiccon">AnalogMinutes</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Analogic" position="1113,538" size="30,30" borderColor="white" foregroundColor="white" linewidth="2" zPosition="2" alphatest="on">
+    <convert type="Analogiccon">AnalogHours</convert>
+  </widget>
+  <widget position="190,491" size="615,28" source="session.CurrentService" render="Label" font="Named;24" valign="center" halign="left" noWrap="1" backgroundColor="black" shadowColor="#000000" shadowOffset="-1,-1" transparent="1" foregroundColor="white">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="1060,601" size="144,28" font="Named; 15" halign="center" backgroundColor="black" transparent="1" zPosition="1">
+    <convert type="ClockToText">Format:%d.%m.%Y</convert>
+  </widget>
+  <ePixmap pixmap="ru_infinity_hd/icon/i_dolby_no.png" position="980,556" size="36, 36" zPosition="3" alphatest="on" transparent="1"/>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_dolby.png" position="980,556" size="36, 36" zPosition="4" alphatest="on" transparent="1">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="ru_infinity_hd/icon/i_format_no.png" position="1018, 524" size="36, 36" zPosition="1" alphatest="on" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_format.png" position="1018, 524" size="36, 36" zPosition="2" alphatest="on">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="ru_infinity_hd/icon/i_txt_no.png" position="1018,556" size="36, 36" zPosition="3" alphatest="on" transparent="1"/>
+  <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_txt.png" position="1018,556" size="36, 36" zPosition="4" alphatest="on" transparent="1">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="ru_infinity_hd/icon/i_fta.png" position="892,556" size="36, 36" zPosition="3" alphatest="on" transparent="1" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_crypt.png" position="892,556" size="36, 36" zPosition="4" alphatest="on" transparent="1">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="ru_infinity_hd/icon/i_sub_no.png" position="980, 524" size="36, 36" zPosition="1" alphatest="on" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_sub.png" position="980, 524" size="36, 36" zPosition="2" alphatest="on">
+    <convert type="ServiceInfo">SubservicesAvailable</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.RecordState" render="Pixmap" pixmap="ru_infinity_hd/icon/i_rec.png" position="854, 524" zPosition="3" size="36, 36" alphatest="on">
+    <convert type="ConditionalShowHide">Blink</convert>
+  </widget>
+  <ePixmap pixmap="ru_infinity_hd/icon/i_sd.png" position="930,556" size="36,36" zPosition="3" alphatest="on" transparent="1" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="ru_infinity_hd/icon/i_hd.png" position="930,556" size="36,36" zPosition="4" alphatest="on" transparent="1">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">800,2000</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap position="190, 525" size="615,14" pixmap="ru_infinity_hd/slider/slider_back_615.png" transparent="1" alphatest="on" zPosition="2" />
+  <widget source="session.Event_Now" render="Progress" pixmap="ru_infinity_hd/slider/slider_main_615.png" position="190, 525" size="615,14" zPosition="3" transparent="1">
+    <convert type="EventTime">Progress</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="193, 556" size="71, 25" font="Regular; 23" halign="left" backgroundColor="black" shadowColor="black" shadowOffset="-1,-1" transparent="1" foregroundColor="white">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="700, 558" size="100, 23" font="Regular; 20" halign="right" backgroundColor="black" shadowColor="black" shadowOffset="-1,-1" transparent="1" foregroundColor="white">
+    <convert type="EventTime">Remaining</convert>
+    <convert type="RemainingToText">InMinutes</convert>
+  </widget>
+  <widget source="session.Event_Now" render="Label" position="265, 556" size="433, 25" font="Regular; 23" halign="left" backgroundColor="black" noWrap="1" shadowColor="black" shadowOffset="-1,-1" transparent="1" foregroundColor="white">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="session.Event_Next" render="Label" position="193, 594" size="71, 25" font="Regular; 23" halign="left" backgroundColor="black" foregroundColor="grey" transparent="1">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget source="session.Event_Next" render="Label" position="700, 596" size="100, 23" font="Regular; 20" halign="right" backgroundColor="black" foregroundColor="grey" transparent="1">
+    <convert type="EventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <widget source="session.Event_Next" render="Label" position="265, 594" size="433, 25" font="Regular;23" halign="left" noWrap="1" backgroundColor="black" foregroundColor="grey" transparent="1">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <ePixmap position="62, 544" size="126,82" pixmap="ru_infinity_hd/frame_hd.png" zPosition="1" alphatest="on" />
+  <widget source="session.CurrentService" render="Picon" position="75,555" zPosition="4" size="100,60" alphatest="on">
+    <convert type="ServiceName">Reference</convert>
+  </widget>
+  <!--TUNER STATUS A -->
+  <ePixmap pixmap="ru_infinity_hd/icon/icon_a_no.png" position="892, 524" size="20, 36" zPosition="1" alphatest="on" transparent="1" />
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_a_akt.png" size="20, 36" position="892, 524" zPosition="2" alphatest="on" transparent="1">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_a.png" size="20, 36" position="892, 524" zPosition="3" alphatest="on" transparent="1">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">0,0</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <!--TUNER STATUS B  -->
+  <ePixmap pixmap="ru_infinity_hd/icon/icon_b_no.png" position="914, 524" size="20, 36" zPosition="1" alphatest="on" transparent="1" />
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_b_akt.png" size="20, 36" position="914, 524" zPosition="2" alphatest="on" transparent="1">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_b.png" size="20, 36" position="914, 524" zPosition="3" alphatest="on" transparent="1">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">1,1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <!-- TUNER STATUS c -->
+  <ePixmap pixmap="ru_infinity_hd/icon/icon_c_no.png" position="936, 524" size="20, 36" zPosition="1" alphatest="on" transparent="1" />
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_c_akt.png" size="20, 36" position="936, 524" zPosition="2" alphatest="on" transparent="1">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">4</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_c.png" size="20, 36" position="936, 524" zPosition="3" alphatest="on" transparent="1">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">2,2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <!-- TUNER STATUS D -->
+  <ePixmap pixmap="ru_infinity_hd/icon/icon_d_no.png" position="958, 524" size="20, 36" zPosition="1" alphatest="on" transparent="1" />
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_d_akt.png" size="20, 36" position="958, 524" zPosition="2" alphatest="on" transparent="1">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">8</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_d.png" size="20, 36" position="958, 524" zPosition="3" alphatest="on" transparent="1">
+    <convert type="FrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">3,3</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <eLabel name="new eLabel" position="80,625" size="1120, 1" backgroundColor="crypt_emm" zPosition="5" />
+</screen>
+<screen name="SecondInfoBar" zPosition="-1" position="0,40" size="1280,720" title="InfoBar" backgroundColor="transparent" flags="wfNoBorder">
+<ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="ru_infinity_hd/infobar.png" />
+<eLabel text="Epg" font="Named;23" position="81,491" size="115,25" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
+<eLabel text="Now" font="Named;23" position="81,516" size="115,25" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
+<widget source="session.Event_Now" render="Label" position="200,491" size="1000,100" font="Regular;21" backgroundColor="black" foregroundColor="white" zPosition="1" transparent="1">
+<convert type="EventName">ExtendedDescription</convert>
 </widget>
-    <ePixmap position="190, 525" size="615,14" pixmap="ru_infinity_hd/slider/slider_back_615.png" transparent="1" alphatest="on" zPosition="2"/>
-    <widget source="session.Event_Now" render="Progress" pixmap="ru_infinity_hd/slider/slider_main_615.png" position="190, 525" size="615,14" zPosition="3" transparent="1">
-      <convert type="EventTime">Progress</convert>
-    </widget>
-    <widget source="session.Event_Now" render="Label" position="193, 556" size="71, 25" font="Regular; 23" halign="left" backgroundColor="black" shadowColor="black" shadowOffset="-1,-1" transparent="1" foregroundColor="white">
-      <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="session.Event_Now" render="Label" position="700, 558" size="100, 23" font="Regular; 20" halign="right" backgroundColor="black" shadowColor="black" shadowOffset="-1,-1" transparent="1" foregroundColor="white">
-      <convert type="EventTime">Remaining</convert>
-      <convert type="RemainingToText">InMinutes</convert>
-    </widget>
-    <widget source="session.Event_Now" render="Label" position="265, 556" size="433, 25" font="Regular; 23" halign="left" backgroundColor="black" noWrap="1" shadowColor="black" shadowOffset="-1,-1" transparent="1" foregroundColor="white">
-      <convert type="EventName">Name</convert>
-    </widget>
-    <widget source="session.Event_Next" render="Label" position="193, 594" size="71, 25" font="Regular; 23" halign="left" backgroundColor="black" foregroundColor="grey" transparent="1">
-      <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="session.Event_Next" render="Label" position="700, 596" size="100, 23" font="Regular; 20" halign="right" backgroundColor="black" foregroundColor="grey" transparent="1">
-      <convert type="EventTime">Duration</convert>
-      <convert type="ClockToText">InMinutes</convert>
-    </widget>
-    <widget source="session.Event_Next" render="Label" position="265, 594" size="433, 25" font="Regular;23" halign="left" noWrap="1" backgroundColor="black" foregroundColor="grey" transparent="1">
-      <convert type="EventName">Name</convert>
-    </widget>
-    <ePixmap position="62, 544" size="126,82" pixmap="ru_infinity_hd/frame_hd.png" zPosition="1" alphatest="on"/>
-    <widget source="session.CurrentService" render="Picon" position="75,555" zPosition="4" size="100,60" alphatest="on">
-      <convert type="ServiceName">Reference</convert>
-    </widget>
-    <!--TUNER STATUS A -->
-    <ePixmap pixmap="ru_infinity_hd/icon/icon_a_no.png" position="892, 565" size="20, 36" zPosition="1" alphatest="on"/>
-    <widget source="session.TunerInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_a_akt.png" size="20, 36" position="892, 565" zPosition="2" alphatest="on">
-      <convert type="TunerInfo">TunerUseMask</convert>
-      <convert type="ValueBitTest">1</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_a.png" size="20, 36" position="892, 565" zPosition="3" alphatest="on">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">0,0</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <!--TUNER STATUS B  -->
-    <ePixmap pixmap="ru_infinity_hd/icon/icon_b_no.png" position="914, 565" size="20, 36" zPosition="1" alphatest="on"/>
-    <widget source="session.TunerInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_b_akt.png" size="20, 36" position="914, 565" zPosition="2" alphatest="on">
-      <convert type="TunerInfo">TunerUseMask</convert>
-      <convert type="ValueBitTest">2</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_b.png" size="20, 36" position="914, 565" zPosition="3" alphatest="on">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">1,1</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <!-- TUNER STATUS c -->
-    <ePixmap pixmap="ru_infinity_hd/icon/icon_c_no.png" position="936, 565" size="20, 36" zPosition="1" alphatest="on"/>
-    <widget source="session.TunerInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_c_akt.png" size="20, 36" position="936, 565" zPosition="2" alphatest="on">
-      <convert type="TunerInfo">TunerUseMask</convert>
-      <convert type="ValueBitTest">4</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_c.png" size="20, 36" position="936, 565" zPosition="3" alphatest="on">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">2,2</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <!-- TUNER STATUS D -->
-    <ePixmap pixmap="ru_infinity_hd/icon/icon_d_no.png" position="958, 565" size="20, 36" zPosition="1" alphatest="on"/>
-    <widget source="session.TunerInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_d_akt.png" size="20, 36" position="958, 565" zPosition="2" alphatest="on">
-      <convert type="TunerInfo">TunerUseMask</convert>
-      <convert type="ValueBitTest">8</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="ru_infinity_hd/icon/icon_d.png" size="20, 36" position="958, 565" zPosition="3" alphatest="on">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">3,3</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <eLabel name="new eLabel" position="80, 648" size="1120, 1" backgroundColor="crypt_emm"/>
-    <widget source="session.CurrentService" render="Label" position="0,0" size="0,0" font="Regular;25" halign="center" transparent="1" backgroundColor="background" zPosition="-10">
-       <convert type="ServiceNumber">Number</convert>
-     </widget>
-  </screen>
+<eLabel text="Epg" font="Named;23" position="81,601" size="115,25" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
+<eLabel text="Next" font="Named;23" position="81,626" size="115,25" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
+<widget source="session.Event_Next" render="Label" position="200,601" size="1000,50" font="Regular;21" backgroundColor="black" foregroundColor="greydate" zPosition="1" transparent="1">
+<convert type="EventName">ExtendedDescription</convert>
+</widget>
+  <eLabel name="new eLabel" position="200,595" size="1000,1" backgroundColor="crypt_emm" zPosition="5"/>
+  <eLabel name="new eLabel" position="65,497" size="1,150" backgroundColor="crypt_emm" zPosition="5"/>
+</screen>
   <screen name="Mute" position="70, 70" zPosition="-1" size="64, 22" title="Mute" flags="wfNoBorder">
     <eLabel text="MUTE" position="2,2" size="60, 19" font="Named; 15" halign="center" valign="center" backgroundColor="background" transparent="0"/>
   </screen>
@@ -260,250 +298,84 @@
     <ePixmap position="0, 0" zPosition="0" size="1280, 70" pixmap="ru_infinity_hd/volume/vol_back.png"/>
     <widget name="Volume" position="285, 25" zPosition="1" size="710,20" pixmap="ru_infinity_hd/volume/vol.png" transparent="1"/>
   </screen>
-  <screen name="menu_mainmenu" position="0,0" size="1280,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
-    <ePixmap position="50, 65" size="480,66" pixmap="ru_infinity_hd/menu/db.png" alphatest="blend"/>
-    <ePixmap pixmap="skin_default/icons/clock.png" position="50, 30" zPosition="3" size="14,14" alphatest="on"/>
-    <widget font="Named;20" position="600, 135" render="Label" size="320,22" source="title" halign="right" transparent="1" zPosition="2" backgroundColor="black" foregroundColor="crypt_emm"/>
-    <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Date</convert>
-    </widget>
-    <eLabel backgroundColor="crypt_emm" position="455, 155" size="465, 2" zPosition="2" foregroundColor="crypt_emm"/>
-    <widget position="450, 195" render="Listbox" scrollbarMode="showNever" size="400, 410" source="menu" transparent="1">
+  <screen name="menu_mainmenu" position="0,0" size="470,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
+    <widget font="Named;35" position="55,30" render="Label" size="395,45" source="title" halign="center" transparent="1" zPosition="2" backgroundColor="black" foregroundColor="crypt_emm"/>
+    <eLabel backgroundColor="crypt_emm" position="55,67" size="395,2" zPosition="2" foregroundColor="crypt_emm"/>
+    <widget position="50, 100" render="Listbox" scrollbarMode="showNever" size="400, 410" source="menu" transparent="1">
       <convert type="TemplatedMultiContent">
-		{"template": [ MultiContentEntryText(pos = (25, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
+		{"template": [ MultiContentEntryText(pos = (5, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
 		"fonts": [gFont("Regular", 24)],
 		"itemHeight": 40}
 	</convert>
     </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tv_channel.png" position="55,155" render="Pixmap" size="300, 500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">subtitle_selection</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_source_locale.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">media_player</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_movies_recordedtv.png" position="55, 155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">movie_player</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_movie.png" position="55, 155" render="Pixmap" size="300, 500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">dmc_mainmenu</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_photo.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">photo_player</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_info.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">info_screen</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_plugin.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">plugin_selection</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_timer.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">timer_edit</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_system.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">setup_selection</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_softwaremanager.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">bp_selection</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget backgroundColor="transpBlack" pixmap="ru_infinity_hd/menu/mainmenu_tasks_power.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">standby_restart_list</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_source_scart.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">scart_switch</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_movies_dvdlibrary_dvdeject.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">dvd_player</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tv_search.png" position="55,155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">merlin_browser</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
   </screen>
   <!-- ####### Einstellungen ####### -->
-  <screen name="menu_setup" position="0,0" size="1280,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
-    <ePixmap pixmap="skin_default/icons/clock.png" position="50, 30" zPosition="3" size="14,14" alphatest="on"/>
-    <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Date</convert>
-    </widget>
-    <widget font="Named; 20" position="600, 135" render="Label" size="320, 22" source="title" halign="right" transparent="1" zPosition="2" foregroundColor="crypt_emm" backgroundColor="black"/>
-    <eLabel backgroundColor="crypt_emm" position="455, 155" size="465, 2" zPosition="2"/>
-    <ePixmap pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_system.png" position="55, 155" size="300, 500"/>
-    <widget position="450, 195" render="Listbox" scrollbarMode="showNever" size="400, 455" source="menu" transparent="1">
+  <screen name="menu_setup" position="0,0" size="470,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
+    <widget font="Named;35" position="55,30" render="Label" size="395,45" source="title" halign="center" transparent="1" zPosition="2" backgroundColor="black" foregroundColor="crypt_emm"/>
+    <eLabel backgroundColor="crypt_emm" position="55,67" size="395,2" zPosition="2" foregroundColor="crypt_emm"/>
+    <widget position="50, 100" render="Listbox" scrollbarMode="showNever" size="400, 410" source="menu" transparent="1">
       <convert type="TemplatedMultiContent">
-{"template": [ MultiContentEntryText(pos = (25, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
-"fonts": [gFont("Regular", 24)],
-"itemHeight": 40
-}
-</convert>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_scan.png" position="55, 155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">service_searching_selection</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_default.png" position="55, 155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">system_selection</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_tv_ci.png" position="55, 155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">ci_setup</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="menu" render="Pixmap" pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_tv_ci.png" position="55, 155" size="300,500">
-      <convert type="MenuEntryCompare">ci_assign</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_parental.png" position="55, 155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">parental_setup</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_factoryreset.png" position="55, 155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">default_wizard</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_factoryreset.png" position="55, 155" render="Pixmap" size="300,500" source="menu" zPosition="1">
-      <convert type="MenuEntryCompare">factory_reset</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="menu" render="Pixmap" pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_softwaremanager.png" position="55, 155" size="300,500">
-      <convert type="MenuEntryCompare">software_manager</convert>
-      <convert type="ConditionalShowHide"/>
+		{"template": [ MultiContentEntryText(pos = (5, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
+		"fonts": [gFont("Regular", 24)],
+		"itemHeight": 40}
+	</convert>
     </widget>
   </screen>
   <!-- ########################################################### screen ########################################################### -->
-  <screen name="menu_information" position="0,0" size="1280,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
-    <ePixmap pixmap="skin_default/icons/clock.png" position="50, 30" zPosition="3" size="14,14" alphatest="on"/>
-    <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Date</convert>
-    </widget>
-    <eLabel position="455, 155" size="465, 2" backgroundColor="crypt_emm"/>
-    <widget source="title" render="Label" position="600, 135" size="320, 22" font="Named; 20" halign="right" backgroundColor="black" transparent="1" foregroundColor="crypt_emm"/>
-    <widget source="menu" render="Listbox" position="450, 195" size="400, 455" scrollbarMode="showNever" transparent="1">
+  <screen name="menu_information" position="0,0" size="470,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
+    <widget font="Named;35" position="55,30" render="Label" size="395,45" source="title" halign="center" transparent="1" zPosition="2" backgroundColor="black" foregroundColor="crypt_emm"/>
+    <eLabel backgroundColor="crypt_emm" position="55,67" size="395,2" zPosition="2" foregroundColor="crypt_emm"/>
+    <widget position="50, 100" render="Listbox" scrollbarMode="showNever" size="400, 410" source="menu" transparent="1">
       <convert type="TemplatedMultiContent">
-				{"template": [ MultiContentEntryText(pos = (25, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
-				"fonts": [gFont("Regular", 24)],
-				"itemHeight": 40
-				}
-			</convert>
+		{"template": [ MultiContentEntryText(pos = (5, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
+		"fonts": [gFont("Regular", 24)],
+		"itemHeight": 40}
+	</convert>
     </widget>
-    <ePixmap pixmap="ru_infinity_hd/menu/mainmenu_tasks_info.png" position="55, 155" size="300,500"/>
   </screen>
-  <screen name="menu_scan" position="0, 0" size="1280, 720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
-    <ePixmap pixmap="skin_default/icons/clock.png" position="50, 30" zPosition="3" size="14,14" alphatest="on"/>
-    <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Date</convert>
-    </widget>
-    <eLabel backgroundColor="crypt_emm" position="455, 155" size="465, 2" zPosition="2"/>
-    <widget source="title" render="Label" position="600, 135" size="320, 22" font="Named; 20" halign="right" backgroundColor="black" transparent="1" foregroundColor="crypt_emm"/>
-    <widget source="menu" render="Listbox" position="450, 195" size="400, 400" scrollbarMode="showNever" transparent="1">
+  <screen name="menu_scan" position="0, 0" size="470, 720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
+    <widget font="Named;35" position="55,30" render="Label" size="395,45" source="title" halign="center" transparent="1" zPosition="2" backgroundColor="black" foregroundColor="crypt_emm"/>
+    <eLabel backgroundColor="crypt_emm" position="55,67" size="395,2" zPosition="2" foregroundColor="crypt_emm"/>
+    <widget position="50, 100" render="Listbox" scrollbarMode="showNever" size="400, 410" source="menu" transparent="1">
       <convert type="TemplatedMultiContent">
-				{"template": [ MultiContentEntryText(pos = (25, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
-				"fonts": [gFont("Regular", 24)],
-				"itemHeight": 40
-				}
-			</convert>
+		{"template": [ MultiContentEntryText(pos = (5, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
+		"fonts": [gFont("Regular", 24)],
+		"itemHeight": 40}
+	</convert>
     </widget>
-    <ePixmap pixmap="ru_infinity_hd/menu/mainmenu_tasks_scan.png" position="55, 155" size="300, 500"/>
   </screen>
-  <screen name="menu_system" position="0,0" size="1280,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
-    <ePixmap pixmap="skin_default/icons/clock.png" position="50, 30" zPosition="3" size="14,14" alphatest="on"/>
-    <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Date</convert>
-    </widget>
-    <widget source="title" render="Label" position="600, 135" size="320, 22" font="Named; 20" halign="right" backgroundColor="black" transparent="1" foregroundColor="crypt_emm"/>
-    <eLabel position="455, 155" size="465, 2" backgroundColor="crypt_emm" zPosition="5"/>
-    <widget source="menu" render="Listbox" position="450, 170" size="400, 485" scrollbarMode="showNever" transparent="1">
+  <screen name="menu_system" position="0,0" size="470,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
+    <widget font="Named;35" position="55,30" render="Label" size="395,45" source="title" halign="center" transparent="1" zPosition="2" backgroundColor="black" foregroundColor="crypt_emm"/>
+    <eLabel backgroundColor="crypt_emm" position="55,67" size="395,2" zPosition="2" foregroundColor="crypt_emm"/>
+    <widget position="50, 100" render="Listbox" scrollbarMode="showNever" size="400, 600" source="menu" transparent="1">
       <convert type="TemplatedMultiContent">
-				{"template": [ MultiContentEntryText(pos = (25, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
-				"fonts": [gFont("Regular", 24)],
-				"itemHeight": 40
-				}
-			</convert>
+		{"template": [ MultiContentEntryText(pos = (5, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
+		"fonts": [gFont("Regular", 24)],
+		"itemHeight": 40}
+	</convert>
     </widget>
-    <ePixmap pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup_default.png" position="55, 155" size="300,500"/>
   </screen>
   <!-- ########################################################### screen ########################################################### -->
-  <screen name="menu_harddisk" position="0,0" size="1280,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
-    <ePixmap pixmap="skin_default/icons/clock.png" position="50, 30" zPosition="3" size="14,14" alphatest="on"/>
-    <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Date</convert>
-    </widget>
-    <eLabel position="455, 155" size="465, 2" backgroundColor="crypt_emm"/>
-    <widget source="title" render="Label" position="600, 135" size="320, 22" font="Named; 20" halign="right" backgroundColor="black" transparent="1" foregroundColor="crypt_emm"/>
-    <widget source="menu" render="Listbox" position="450, 195" size="400, 430" scrollbarMode="showNever" transparent="1">
+  <screen name="menu_harddisk" position="0,0" size="470,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
+    <widget font="Named;35" position="55,30" render="Label" size="395,45" source="title" halign="center" transparent="1" zPosition="2" backgroundColor="black" foregroundColor="crypt_emm"/>
+    <eLabel backgroundColor="crypt_emm" position="55,67" size="395,2" zPosition="2" foregroundColor="crypt_emm"/>
+    <widget position="50, 100" render="Listbox" scrollbarMode="showNever" size="400, 410" source="menu" transparent="1">
       <convert type="TemplatedMultiContent">
-				{"template": [ MultiContentEntryText(pos = (25, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
-				"fonts": [gFont("Regular", 24)],
-				"itemHeight": 40
-				}
-			</convert>
+		{"template": [ MultiContentEntryText(pos = (5, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
+		"fonts": [gFont("Regular", 24)],
+		"itemHeight": 40}
+	</convert>
     </widget>
-    <ePixmap pixmap="ru_infinity_hd/menu/mainmenu_tasks_setup.png" position="55, 155" size="300, 500"/>
   </screen>
-  <screen name="menu_shutdown" position="0,0" size="1280,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
-    <ePixmap pixmap="skin_default/icons/clock.png" position="50, 30" zPosition="3" size="14,14" alphatest="on"/>
-    <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-      <convert type="ClockToText">Date</convert>
-    </widget>
-    <widget source="title" render="Label" position="600, 135" size="320, 22" font="Named; 20" halign="right" backgroundColor="black" transparent="1" foregroundColor="crypt_emm"/>
-    <eLabel position="455, 155" size="465, 2" backgroundColor="crypt_emm" zPosition="5"/>
-    <widget source="menu" render="Listbox" position="450, 195" size="400, 390" scrollbarMode="showNever" transparent="1">
+  <screen name="menu_shutdown" position="0,0" size="470,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
+    <widget font="Named;35" position="55,30" render="Label" size="395,70" source="title" halign="center" transparent="1" zPosition="2" backgroundColor="black" foregroundColor="crypt_emm"/>
+    <eLabel backgroundColor="crypt_emm" position="55,105" size="395,2" zPosition="2" foregroundColor="crypt_emm"/>
+    <widget position="50, 150" render="Listbox" scrollbarMode="showNever" size="400, 410" source="menu" transparent="1">
       <convert type="TemplatedMultiContent">
-				{"template": [ MultiContentEntryText(pos = (25, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
-				"fonts": [gFont("Regular", 24)],
-				"itemHeight": 40
-				}
-			</convert>
-    </widget>
-    <ePixmap pixmap="ru_infinity_hd/menu/mainmenu_tasks_power_sleeptimer.png" position="55, 155" size="300, 500" zPosition="1"/>
-    <widget source="menu" render="Pixmap" pixmap="ru_infinity_hd/menu/mainmenu_tasks_power_standby.png" position="55, 155" size="300, 500" zPosition="2">
-      <convert type="MenuEntryCompare">standby</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="menu" render="Pixmap" pixmap="ru_infinity_hd/menu/mainmenu_tasks_power_reboot.png" position="55, 155" size="300, 500" zPosition="2">
-      <convert type="MenuEntryCompare">restart</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="menu" render="Pixmap" pixmap="ru_infinity_hd/menu/mainmenu_tasks_power_shutdown.png" position="55, 155" size="300, 500" zPosition="2">
-      <convert type="MenuEntryCompare">deep_standby</convert>
-      <convert type="ConditionalShowHide"/>
-    </widget>
-    <widget source="menu" render="Pixmap" pixmap="ru_infinity_hd/menu/mainmenu_tasks_power_restartshell.png" position="55, 155" size="300, 500" zPosition="2">
-      <convert type="MenuEntryCompare">restart_enigma</convert>
-      <convert type="ConditionalShowHide"/>
+		{"template": [ MultiContentEntryText(pos = (5, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
+		"fonts": [gFont("Regular", 24)],
+		"itemHeight": 40}
+	</convert>
     </widget>
   </screen>
   <screen name="Menu" position="0,0" size="1280,720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
