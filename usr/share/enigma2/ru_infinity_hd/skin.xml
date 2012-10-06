@@ -279,7 +279,7 @@
 <ePixmap position="0,0" zPosition="-1" size="1280,720" pixmap="ru_infinity_hd/infobar.png" />
 <eLabel text="Epg" font="Named;23" position="81,491" size="115,25" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
 <eLabel text="Now" font="Named;23" position="81,516" size="115,25" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
-<widget source="session.Event_Now" render="Label" position="200,491" size="1000,97" font="Regular;21" backgroundColor="black" foregroundColor="white" zPosition="1" transparent="1">
+<widget source="session.Event_Now" render="Label" position="200,491" size="1000,100" font="Regular;21" backgroundColor="black" foregroundColor="white" zPosition="1" transparent="1">
 <convert type="EventName">ExtendedDescription</convert>
 </widget>
 <eLabel text="Epg" font="Named;23" position="81,601" size="115,25" halign="left" foregroundColor="white" backgroundColor="black" transparent="1" />
@@ -334,9 +334,9 @@
     </widget>
   </screen>
   <screen name="menu_scan" position="0, 0" size="470, 720" backgroundColor="un44000000" flags="wfNoBorder" title="Main menu">
-    <widget font="Named;35" position="55,30" render="Label" size="395,70" source="title" halign="center" transparent="1" zPosition="2" backgroundColor="black" foregroundColor="crypt_emm"/>
-    <eLabel backgroundColor="crypt_emm" position="55,105" size="395,2" zPosition="2" foregroundColor="crypt_emm"/>
-    <widget position="50, 150" render="Listbox" scrollbarMode="showNever" size="400, 410" source="menu" transparent="1">
+    <widget font="Named;35" position="55,30" render="Label" size="395,45" source="title" halign="center" transparent="1" zPosition="2" backgroundColor="black" foregroundColor="crypt_emm"/>
+    <eLabel backgroundColor="crypt_emm" position="55,67" size="395,2" zPosition="2" foregroundColor="crypt_emm"/>
+    <widget position="50, 100" render="Listbox" scrollbarMode="showNever" size="400, 410" source="menu" transparent="1">
       <convert type="TemplatedMultiContent">
 		{"template": [ MultiContentEntryText(pos = (5, 5), size = (390, 30), flags = RT_HALIGN_LEFT, text = 0) ],
 		"fonts": [gFont("Regular", 24)],
@@ -412,6 +412,21 @@
     <widget name="yellow" position="0,0" size="0,0"/>
     <widget name="blue" position="0,0" size="0,0"/>
     <eLabel text="MENU" position="960, 590" size="100,22" zPosition="1" font="Regular;20" backgroundColor="black" transparent="1"/>
+  </screen>
+  <screen name="NetworkWizard" position="150,90" size="720,576" title="Welcome...">
+    <widget name="text" position="153,40" size="340,330" font="Regular;22"/>
+    <widget source="list" render="Listbox" position="53,340" size="440,180" scrollbarMode="showOnDemand">
+      <convert type="StringList"/>
+    </widget>
+    <widget name="config" position="53,340" zPosition="1" size="440,180" transparent="1" scrollbarMode="showOnDemand"/>
+    <ePixmap pixmap="ru_infinity_hd/buttons/button_red-fs8.png" position="40,225" zPosition="0" size="15,16" transparent="1" alphatest="on"/>
+    <widget name="languagetext" position="55,225" size="95,30" font="Regular;18"/>
+    <widget name="wizard" pixmap="skin_default/wizard.png" position="40,50" zPosition="10" size="110,174" alphatest="on"/>
+    <widget name="rc" pixmaps="skin_default/rc.png,skin_default/rcold.png" position="500,50" zPosition="10" size="154,500" alphatest="on"/>
+    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" alphatest="on"/>
+    <widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" alphatest="on"/>
+    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" alphatest="on"/>
+    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" alphatest="on"/>
   </screen>
   <screen name="AdapterSetup" position="0, 0" size="1280, 720" flags="wfNoBorder" title="Network Setup">
     <eLabel position="55, 68" size="760, 2" backgroundColor="crypt_emm"/>
@@ -752,6 +767,20 @@
     <widget name="text" position="55,100" size="1060,520" transparent="1" font="Console;21"/>
     <eLabel position="55, 625" size="1100,2" backgroundColor="crypt_emm"/>
   </screen>
+  <screen name="DefaultSatLists" position="340,134" size="600,502" title="Default services lists">
+    <widget name="wizard" pixmap="skin_default/wizard.png" position="60,20" zPosition="10" size="110,174" transparent="1" alphatest="on"/>
+    <widget name="text" position="230,50" size="340, 247" font="Regular;23"/>
+    <ePixmap pixmap="skin_default/buttons/button_red.png" position="40,223" size="15,16" alphatest="on"/>
+    <widget name="languagetext" position="70,220" size="120,30" font="Regular;20"/>
+    <widget source="list" render="Listbox" position="20,300" size="560,200" scrollbarMode="showOnDemand" transparent="1">
+      <convert type="StringList"/>
+    </widget>
+    <widget name="config" zPosition="1" position="20,300" size="560,200" scrollbarMode="showOnDemand" transparent="1"/>
+    <widget name="rc" pixmap="skin_default/rc.png" position="600, 502" zPosition="10" size="154,471" transparent="1" alphatest="on"/>
+    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
+    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
+    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
+  </screen>
   <screen name="epgrefresh" position="0,0" size="1280,720" flags="wfNoBorder" title="EPG Refresh">
     <widget name="liste" position="55, 100" size="1080,450" scrollbarMode="showOnDemand" transparent="1"/>
     <eLabel position="55, 570" size="1100,2" backgroundColor="crypt_emm"/>
@@ -761,6 +790,20 @@
     <widget name="key_green" position="340, 635" size="250,30" font="Regular;24" halign="center" valign="center" foregroundColor="green"/>
     <widget name="key_blue" position="840, 635" size="250,30" font="Regular;24" halign="center" valign="center" foregroundColor="blue"/>
   </screen>
+  <screen name="DefaultWizard" position="340,134" size="600,502" title="Welcome...">
+    <widget name="wizard" pixmap="skin_default/wizard.png" position="60,20" zPosition="10" size="110,174" transparent="1" alphatest="on"/>
+    <widget name="text" position="230,50" size="340, 247" font="Regular;23"/>
+    <ePixmap pixmap="skin_default/buttons/button_red.png" position="40,223" size="15,16" alphatest="on"/>
+    <widget name="languagetext" position="70,220" size="120,30" font="Regular;20"/>
+    <widget source="list" render="Listbox" position="20,300" size="560,200" scrollbarMode="showOnDemand" transparent="1">
+      <convert type="StringList"/>
+    </widget>
+    <widget name="config" zPosition="1" position="20,300" size="560,200" scrollbarMode="showOnDemand" transparent="1"/>
+    <widget name="rc" pixmap="skin_default/rc.png" position="600,502" zPosition="10" size="154,471" transparent="1" alphatest="on"/>
+    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
+    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
+    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
+  </screen>
 <screen name="Dish" position="96,150" size="235,153" zPosition="-1" title="Dish">
 <widget name="turnTime" position="5,0" size="120,20" zPosition="1" font="Regular;18" halign="right" transparent="1"/>
 <eLabel name="From" position="107,101" size="45,16" zPosition="1" font="Regular;16" halign="left" transparent="1" text="From:"/>
@@ -769,6 +812,16 @@
 <widget name="posGoto" position="158,127" size="70,20" zPosition="1" font="Regular;20" halign="left" shadowColor="black" shadowOffset="-2,-2" transparent="1"/>
 <ePixmap pixmap="ru_infinity_hd/sat_msg-fs8.png" position="15,25" zPosition="1" size="119,110" transparent="1" alphatest="on"/>
 </screen>
+  <screen name="DreamPackageWizard" position="340,134" size="600,502" title="Welcome...">
+    <widget name="wizard" pixmap="skin_default/wizard.png" position="60,20" zPosition="10" size="110,174" transparent="1" alphatest="on"/>
+    <ePixmap pixmap="skin_default/buttons/button_red.png" position="40,223" size="15,16" alphatest="on"/>
+    <widget name="languagetext" position="70,220" size="120,30" font="Regular;20"/>
+    <widget name="text" position="230,50" size="340, 247" font="Regular;23"/>
+    <widget source="list" render="Listbox" position="20,300" size="560,200" scrollbarMode="showOnDemand" transparent="1">
+      <convert type="StringList"/>
+    </widget>
+    <widget name="config" zPosition="1" position="20,300" size="560,200" scrollbarMode="showOnDemand" transparent="1"/>
+  </screen>
   <screen name="EPGSelection" position="0,0" size="1280,720" backgroundColor="background" flags="wfNoBorder" zPosition="10" title="EPG Selection">
     <widget position="75, 30" size="80, 20" halign="left" source="global.CurrentTime" render="Label" font="Named; 16" backgroundColor="background" transparent="1" zPosition="3">
       <convert type="ClockToText">Default</convert>
@@ -920,6 +973,29 @@
     <widget name="initializetext" position="20,467" size="580,30" zPosition="1" font="Regular;24" halign="center" transparent="1" foregroundColor="red"/>
     <widget name="initialize" pixmap="skin_default/buttons/red.png" position="0,0" size="0,0"/>
   </screen>
+  <screen name="HelpMenu" position="0,0" size="1280,720" title="Menu" flags="wfNoBorder">
+    <eLabel text="help..." position="450,63" size="740,50" font="Named;34" halign="center" backgroundColor="transpBlack" transparent="1"/>
+    <widget name="rc" position="150,105" size="154,500" pixmaps="skin_default/rc.png,skin_default/rcold.png" zPosition="10" alphatest="on"/>
+    <widget name="long_key" position="80, 615" size="300,30" font="Regular;24" halign="center" foregroundColor="yellow" backgroundColor="transpBlack" transparent="1"/>
+    <widget name="list" position="450,140" size="740,494" scrollbarMode="showOnDemand" transparent="1"/>
+    <widget name="arrowdown" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
+    <widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
+    <widget name="arrowup" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="11" alphatest="on"/>
+    <widget name="arrowup2" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="11" alphatest="on"/>
+  </screen>
+  <screen name="LanguageSelection" position="340,134" size="600,502" title="Language selection">
+    <widget source="languages" render="Listbox" position="5, 2" size="590, 500" scrollbarMode="showNever" transparent="1">
+      <convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (200, 10), size = (470, 30), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the language name,
+						MultiContentEntryPixmap(pos = (30, 5), size = (60, 40), png = 2), # index 2 is the pixmap
+					],
+				 "fonts": [gFont("Regular", 25)],
+				 "itemHeight": 50
+				}
+			</convert>
+    </widget>
+  </screen>
   <screen flags="wfNoBorder" name="CutListEditor" position="0,0" size="1280,720" title="Cutlist editor">
     <eLabel backgroundColor="grey" position="80,125" size="300,420" zPosition="1"/>
     <eLabel backgroundColor="black" position="81,126" size="298,418" zPosition="2"/>
@@ -977,10 +1053,10 @@
       <convert type="TemplatedMultiContent">
 				{"template": [
 						MultiContentEntryText(pos = (10, 5), size = (550, 30), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the nim name,
-						MultiContentEntryText(pos = (50, 37), size = (520, 50), font = 1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is a description of the nim settings,
+						MultiContentEntryText(pos = (50, 37), size = (520, 30), font = 1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is a description of the nim settings,
 					],
 				 "fonts": [gFont("Regular", 22), gFont("Regular", 18)],
-				 "itemHeight": 90
+				 "itemHeight": 70
 				}
 			</convert>
     </widget>
@@ -1353,6 +1429,21 @@
     <ePixmap pixmap="ru_infinity_hd/sleeptimer.png" position="450, 5" size="90,90" alphatest="on"/>
   </screen>
   <screen name="Standby" position="0,0" size="1280,720" title="Standby" flags="wfNoBorder"/>
+  <screen name="StartWizard" position="340,134" size="600,502" title="Welcome...">
+    <widget name="wizard" pixmap="skin_default/wizard.png" position="60,20" zPosition="10" size="110,174" transparent="1" alphatest="on"/>
+    <widget name="text" position="230,50" size="340, 247" font="Regular;23"/>
+    <ePixmap pixmap="skin_default/buttons/button_red.png" position="40,223" size="15,16" alphatest="on"/>
+    <widget name="languagetext" position="70,220" size="120,30" font="Regular;20"/>
+    <widget source="list" render="Listbox" position="20,300" size="560,200" scrollbarMode="showOnDemand" transparent="1">
+      <convert type="StringList"/>
+    </widget>
+    <widget name="config" zPosition="1" position="20,300" size="560,200" scrollbarMode="showOnDemand" transparent="1"/>
+    <widget name="rc" pixmap="skin_default/rc.png" position="600,502" zPosition="10" size="154,471" transparent="1" alphatest="on"/>
+    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
+    <widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
+    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
+    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
+  </screen>
   <screen name="SubservicesQuickzap" position="380,580" size="560,100" title="Subservices" backgroundColor="background" flags="wfNoBorder">
     <widget source="session.RecordState" render="Pixmap" pixmap="skin_default/icons/record.png" position="450,5" zPosition="2" size="14,14" alphatest="on">
       <convert type="ConditionalShowHide">Blink</convert>
@@ -2200,11 +2291,11 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
   </screen>
   <screen name="ZapHistoryBrowser" position="90,90" size="1100,576" title="Zap-History Browser">
     <eLabel position="800, 25" size="300, 22" text="ZapHistory Browser" halign="right" font="Regular; 20" transparent="1" zPosition="2"/>
-    <eLabel position="600,50" size="500,1" backgroundColor="crypt_emm" zPosition="2" />
-    <widget name="list" position="10,95" size="1080,410" scrollbarMode="showOnDemand" transparent="1"/>
+    <eLabel position="635, 45" size="465, 2" backgroundColor="crypt_emm"/>
+    <widget name="list" position="335, 95" size="540, 410" scrollbarMode="showOnDemand" transparent="1"/>
     <widget position="240, 535" size="200,36" name="key_red" font="Regular;20" foregroundColor="red" halign="center" valign="center" backgroundColor="black" transparent="1" zPosition="3"/>
     <widget position="520, 535" size="200,36" name="key_green" font="Regular;20" foregroundColor="green" halign="center" valign="center" backgroundColor="black" transparent="1" zPosition="3"/>
-<eLabel position="10,525" size="1080, 1" backgroundColor="crypt_emm" zPosition="2" />
+    <eLabel name="new eLabel" position="0, 525" size="1100, 2" backgroundColor="crypt_emm"/>
   </screen>
   <!-- MyTubePlayer -->
   <screen name="MyTubePlayer" position="0,0" zPosition="-1" size="1280,720" title="InfoBar" backgroundColor="transparent" flags="wfNoBorder">
@@ -2708,6 +2799,14 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="HelpWindow" pixmap="skin_default/vkey_icon.png" position="5, 537" zPosition="1" size="1,1" transparent="1"/>
     <eLabel name="new eLabel" position="0, 443" size="700, 2" backgroundColor="crypt_emm"/>
     <eLabel name="new eLabel" position="0, 515" size="700, 2" backgroundColor="crypt_emm"/>
+  </screen>
+  <screen name="CleanupWizardConfiguration" position="240,90" size="800,576" title="CleanupWizard settings">
+    <widget source="key_red" render="Label" position="210, 535" zPosition="1" size="200,36" foregroundColor="red" font="Regular;22" halign="center" valign="center" backgroundColor="black" transparent="1"/>
+    <widget source="key_green" render="Label" position="440, 535" zPosition="1" size="200, 36" foregroundColor="green" font="Regular;22" halign="center" valign="center" backgroundColor="black" transparent="1"/>
+    <widget name="config" zPosition="2" position="10, 50" size="780, 300" scrollbarMode="showOnDemand" transparent="1"/>
+    <widget source="status" render="Label" position="10, 480" size="780, 40" zPosition="10" font="Regular;20" halign="center" valign="center" backgroundColor="black" transparent="1"/>
+    <eLabel name="new eLabel" position="0, 525" size="800, 2" backgroundColor="crypt_emm"/>
+    <eLabel name="new eLabel" position="0, 473" size="800, 2" backgroundColor="crypt_emm"/>
   </screen>
   <screen name="VideoSetup" position="0,0" size="1280, 720" backgroundColor="un44000000" flags="wfNoBorder" title="VideoSetup">
     <ePixmap pixmap="skin_default/icons/clock.png" position="50, 30" zPosition="3" size="14,14" alphatest="on"/>
@@ -3230,239 +3329,4 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
 <eLabel name="new eLabel" position="50,625" size="1160,1" backgroundColor="crypt_emm" zPosition="1"/>
 <eLabel name="new eLabel" position="910,80" size="300,22" font="Named;20" backgroundColor="black" halign="right" transparent="1" text="SoftCam Selection" foregroundColor="crypt_emm"/>
 </screen>
-  <screen name="LanguageSelection" position="340,134" size="600,502" title="Language selection">
-    <widget source="languages" render="Listbox" position="5, 2" size="590, 500" scrollbarMode="showNever" transparent="1">
-      <convert type="TemplatedMultiContent">
-				{"template": [
-						MultiContentEntryText(pos = (200, 10), size = (470, 30), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the language name,
-						MultiContentEntryPixmap(pos = (30, 5), size = (60, 40), png = 2), # index 2 is the pixmap
-					],
-				 "fonts": [gFont("Regular", 25)],
-				 "itemHeight": 50
-				}
-			</convert>
-    </widget>
-  </screen>
-<!-- WZ -->
-
-  <screen name="NetworkWizard" position="0,0" size="1280,720" flags="wfNoBorder" title="Welcome...">
-  <ePixmap pixmap="skin_default/icons/clock.png" position="55, 30" zPosition="3" size="14,14" alphatest="on" />
-  <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Default</convert>
-  </widget>
-  <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Date</convert>
-  </widget>
-  <eLabel position="845, 85" size="300, 22" text="Welcome..." halign="right" transparent="1" font="Named; 20" zPosition="2" foregroundColor="crypt_emm" />
-  <eLabel position="680, 105" size="465, 2" backgroundColor="crypt_emm" />
-  <eLabel name="new eLabel" position="55,655" size="1100, 2" backgroundColor="crypt_emm" />
-    <widget name="text" position="443,121" size="707,200" font="Regular;23"/>
-    <ePixmap pixmap="skin_default/buttons/button_red.png" position="565,665" size="15,16" alphatest="on"/>
-    <widget name="languagetext" position="591,660" size="120,30" font="Regular;20"/>
-    <widget source="list" render="Listbox" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1">
-      <convert type="StringList"/>
-    </widget>
-    <widget name="config" zPosition="1" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1"/>
-    <widget name="rc" pixmap="ru_infinity_hd/rc.png" position="164,111" zPosition="10" size="145,550" transparent="1" alphatest="on"/>
-    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-  </screen>
-  <screen name="DefaultWizard" position="0,0" size="1280,720" flags="wfNoBorder" title="Welcome...">
-  <ePixmap pixmap="skin_default/icons/clock.png" position="55, 30" zPosition="3" size="14,14" alphatest="on" />
-  <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Default</convert>
-  </widget>
-  <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Date</convert>
-  </widget>
-  <eLabel position="845, 85" size="300, 22" text="Welcome..." halign="right" transparent="1" font="Named; 20" zPosition="2" foregroundColor="crypt_emm" />
-  <eLabel position="680, 105" size="465, 2" backgroundColor="crypt_emm" />
-  <eLabel name="new eLabel" position="55,655" size="1100, 2" backgroundColor="crypt_emm" />
-    <widget name="text" position="443,121" size="707,200" font="Regular;23"/>
-    <ePixmap pixmap="skin_default/buttons/button_red.png" position="565,665" size="15,16" alphatest="on"/>
-    <widget name="languagetext" position="591,660" size="120,30" font="Regular;20"/>
-    <widget source="list" render="Listbox" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1">
-      <convert type="StringList"/>
-    </widget>
-    <widget name="config" zPosition="1" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1"/>
-    <widget name="rc" pixmap="ru_infinity_hd/rc.png" position="164,111" zPosition="10" size="145,550" transparent="1" alphatest="on"/>
-    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-  </screen>
-<screen name="ImageWizard" position="0,0" size="1280,720" flags="wfNoBorder" title="Welcome...">
-  <ePixmap pixmap="skin_default/icons/clock.png" position="55, 30" zPosition="3" size="14,14" alphatest="on" />
-  <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Default</convert>
-  </widget>
-  <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Date</convert>
-  </widget>
-  <eLabel position="845, 85" size="300, 22" text="Welcome..." halign="right" transparent="1" font="Named; 20" zPosition="2" foregroundColor="crypt_emm" />
-  <eLabel position="680, 105" size="465, 2" backgroundColor="crypt_emm" />
-  <eLabel name="new eLabel" position="55,655" size="1100, 2" backgroundColor="crypt_emm" />
-    <widget name="text" position="443,121" size="707,200" font="Regular;23"/>
-    <ePixmap pixmap="skin_default/buttons/button_red.png" position="565,665" size="15,16" alphatest="on"/>
-    <widget name="languagetext" position="591,660" size="120,30" font="Regular;20"/>
-    <widget source="list" render="Listbox" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1">
-      <convert type="StringList"/>
-    </widget>
-    <widget name="config" zPosition="1" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1"/>
-    <widget name="rc" pixmap="ru_infinity_hd/rc.png" position="164,111" zPosition="10" size="145,550" transparent="1" alphatest="on"/>
-    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-  </screen>
-<screen name="HelpMenu" position="0,0" size="1280,720" title="Menu" flags="wfNoBorder">
-    <eLabel text="help..." position="450,63" size="740,50" font="Named;34" halign="center" backgroundColor="transpBlack" transparent="1"/>
-    <widget name="rc" position="150,105" size="154,500" pixmaps="skin_default/rc.png,skin_default/rcold.png" zPosition="10" alphatest="on"/>
-    <widget name="long_key" position="80, 615" size="300,30" font="Regular;24" halign="center" foregroundColor="yellow" backgroundColor="transpBlack" transparent="1"/>
-    <widget name="list" position="450,140" size="740,494" scrollbarMode="showOnDemand" transparent="1"/>
-    <widget name="arrowdown" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
-    <widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="11" alphatest="on"/>
-    <widget name="arrowup" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="11" alphatest="on"/>
-    <widget name="arrowup2" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="11" alphatest="on"/>
-  </screen>
-  <screen name="DefaultSatLists" position="0,0" size="1280,720" flags="wfNoBorder" title="Welcome...">
-  <ePixmap pixmap="skin_default/icons/clock.png" position="55, 30" zPosition="3" size="14,14" alphatest="on" />
-  <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Default</convert>
-  </widget>
-  <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Date</convert>
-  </widget>
-  <eLabel position="845, 85" size="300, 22" text="Welcome..." halign="right" transparent="1" font="Named; 20" zPosition="2" foregroundColor="crypt_emm" />
-  <eLabel position="680, 105" size="465, 2" backgroundColor="crypt_emm" />
-  <eLabel name="new eLabel" position="55,655" size="1100, 2" backgroundColor="crypt_emm" />
-    <widget name="text" position="443,121" size="707,200" font="Regular;23"/>
-    <ePixmap pixmap="skin_default/buttons/button_red.png" position="565,665" size="15,16" alphatest="on"/>
-    <widget name="languagetext" position="591,660" size="120,30" font="Regular;20"/>
-    <widget source="list" render="Listbox" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1">
-      <convert type="StringList"/>
-    </widget>
-    <widget name="config" zPosition="1" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1"/>
-    <widget name="rc" pixmap="ru_infinity_hd/rc.png" position="164,111" zPosition="10" size="145,550" transparent="1" alphatest="on"/>
-    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-  </screen>
-  <screen name="DreamPackageWizard" position="0,0" size="1280,720" flags="wfNoBorder" title="Welcome...">
-  <ePixmap pixmap="skin_default/icons/clock.png" position="55, 30" zPosition="3" size="14,14" alphatest="on" />
-  <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Default</convert>
-  </widget>
-  <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Date</convert>
-  </widget>
-  <eLabel position="845, 85" size="300, 22" text="Welcome..." halign="right" transparent="1" font="Named; 20" zPosition="2" foregroundColor="crypt_emm" />
-  <eLabel position="680, 105" size="465, 2" backgroundColor="crypt_emm" />
-  <eLabel name="new eLabel" position="55,655" size="1100, 2" backgroundColor="crypt_emm" />
-    <widget name="text" position="443,121" size="707,200" font="Regular;23"/>
-    <ePixmap pixmap="skin_default/buttons/button_red.png" position="565,665" size="15,16" alphatest="on"/>
-    <widget name="languagetext" position="591,660" size="120,30" font="Regular;20"/>
-    <widget source="list" render="Listbox" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1">
-      <convert type="StringList"/>
-    </widget>
-    <widget name="config" zPosition="1" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1"/>
-    <widget name="rc" pixmap="ru_infinity_hd/rc.png" position="164,111" zPosition="10" size="145,550" transparent="1" alphatest="on"/>
-    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-  </screen>
-  <screen name="StartWizard" position="0,0" size="1280,720" flags="wfNoBorder" title="Welcome...">
-  <ePixmap pixmap="skin_default/icons/clock.png" position="55, 30" zPosition="3" size="14,14" alphatest="on" />
-  <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Default</convert>
-  </widget>
-  <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Date</convert>
-  </widget>
-  <eLabel position="845, 85" size="300, 22" text="Welcome..." halign="right" transparent="1" font="Named; 20" zPosition="2" foregroundColor="crypt_emm" />
-  <eLabel position="680, 105" size="465, 2" backgroundColor="crypt_emm" />
-  <eLabel name="new eLabel" position="55,655" size="1100, 2" backgroundColor="crypt_emm" />
-    <widget name="text" position="443,121" size="707,200" font="Regular;23"/>
-    <ePixmap pixmap="skin_default/buttons/button_red.png" position="565,665" size="15,16" alphatest="on"/>
-    <widget name="languagetext" position="591,660" size="120,30" font="Regular;20"/>
-    <widget source="list" render="Listbox" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1">
-      <convert type="StringList"/>
-    </widget>
-    <widget name="config" zPosition="1" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1"/>
-    <widget name="rc" pixmap="ru_infinity_hd/rc.png" position="164,111" zPosition="10" size="145,550" transparent="1" alphatest="on"/>
-    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-  </screen>
-<screen name="LanguageWizard" position="0,0" size="1280,720" flags="wfNoBorder" title="Welcome...">
-  <ePixmap pixmap="skin_default/icons/clock.png" position="55, 30" zPosition="3" size="14,14" alphatest="on" />
-  <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Default</convert>
-  </widget>
-  <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Date</convert>
-  </widget>
-  <eLabel position="845, 85" size="300, 22" text="Welcome..." halign="right" transparent="1" font="Named; 20" zPosition="2" foregroundColor="crypt_emm" />
-  <eLabel position="680, 105" size="465, 2" backgroundColor="crypt_emm" />
-  <eLabel name="new eLabel" position="55,655" size="1100, 2" backgroundColor="crypt_emm" />
-    <widget name="text" position="443,121" size="707,200" font="Regular;23"/>
-    <ePixmap pixmap="ru_infinity_hd/ico_flags.png" position="616,191" size="380,220" alphatest="blend" zPosition="4"/>
-  <eLabel name="new eLabel" position="443,407" size="707, 2" backgroundColor="crypt_emm" />
-<widget source="languages" render="Listbox" zPosition="1" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1">
-<convert type="TemplatedMultiContent">
-{"template": [
-MultiContentEntryText(pos = (80, 10), size = (200, 50), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the language name,
-MultiContentEntryPixmap(pos = (10, 5), size = (60, 40), png = 2), # index 2 is the pixmap
-],
-"fonts": [gFont("Regular", 20)],
-"itemHeight": 50
-}
-</convert>
-</widget>
-    <widget name="rc" pixmap="ru_infinity_hd/rc.png" position="164,111" zPosition="10" size="145,550" transparent="1" alphatest="on"/>
-    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-  </screen>
-
-<screen name="VideoWizard" position="0,0" size="1280,720" flags="wfNoBorder" title="Welcome...">
-  <ePixmap pixmap="skin_default/icons/clock.png" position="55, 30" zPosition="3" size="14,14" alphatest="on" />
-  <widget source="global.CurrentTime" render="Label" position="75, 30" size="80, 20" font="Named; 16" halign="left" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Default</convert>
-  </widget>
-  <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 20" font="Named; 16" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
-    <convert type="ClockToText">Date</convert>
-  </widget>
-  <eLabel position="845, 85" size="300, 22" text="Welcome..." halign="right" transparent="1" font="Named; 20" zPosition="2" foregroundColor="crypt_emm" />
-  <eLabel position="680, 105" size="465, 2" backgroundColor="crypt_emm" />
-  <eLabel name="new eLabel" position="55,655" size="1100, 2" backgroundColor="crypt_emm" />
-    <widget name="text" position="443,121" size="707,200" font="Regular;23"/>
-    <ePixmap pixmap="skin_default/buttons/button_red.png" position="565,665" size="15,16" alphatest="on"/>
-    <widget name="languagetext" position="591,660" size="120,30" font="Regular;20"/>
-    <widget source="list" render="Listbox" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1">
-      <convert type="StringList"/>
-    </widget>
-    <widget name="config" zPosition="1" position="443,416" size="707,200" scrollbarMode="showOnDemand" transparent="1"/>
-    <widget name="rc" pixmap="ru_infinity_hd/rc.png" position="164,111" zPosition="10" size="145,550" transparent="1" alphatest="on"/>
-    <widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-    <widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" transparent="1" alphatest="on"/>
-<widget name="portpic" position="300,416" size="150,150" alphatest="on" zPosition="10" transparent="1"/>
-  </screen>
-<screen name="CleanupWizardConfiguration" position="240,90" size="800,576" title="CleanupWizard settings">
-    <widget source="key_red" render="Label" position="210, 535" zPosition="1" size="200,36" foregroundColor="red" font="Regular;22" halign="center" valign="center" backgroundColor="black" transparent="1"/>
-    <widget source="key_green" render="Label" position="440, 535" zPosition="1" size="200, 36" foregroundColor="green" font="Regular;22" halign="center" valign="center" backgroundColor="black" transparent="1"/>
-    <widget name="config" zPosition="2" position="10, 50" size="780, 300" scrollbarMode="showOnDemand" transparent="1"/>
-    <widget source="status" render="Label" position="10, 480" size="780, 40" zPosition="10" font="Regular;20" halign="center" valign="center" backgroundColor="black" transparent="1"/>
-    <eLabel name="new eLabel" position="0, 525" size="800, 2" backgroundColor="crypt_emm"/>
-    <eLabel name="new eLabel" position="0, 473" size="800, 2" backgroundColor="crypt_emm"/>
-  </screen>
-
 </skin>
