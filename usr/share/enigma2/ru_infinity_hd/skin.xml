@@ -468,6 +468,14 @@
     <eLabel name="new eLabel" position="55, 510" size="900, 2" backgroundColor="crypt_emm" />
     <eLabel name="new eLabel" position="55, 458" size="900, 2" backgroundColor="crypt_emm" />
   </screen>
+  <screen name="NetworkMacSetup" position="0,0" size="1280,720" flags="wfNoBorder" title="MAC-adress setup">
+    <widget source="key_red" render="Label" position="140, 635" zPosition="1" foregroundColor="red" size="200, 36" font="Regular;20" halign="center" valign="center" backgroundColor="black" transparent="1" />
+    <widget source="key_green" render="Label" position="380, 635" foregroundColor="green" zPosition="1" size="200, 36" font="Regular;20" halign="center" valign="center" backgroundColor="black" transparent="1" />
+    <widget name="config" position="85, 80" size="740, 280" scrollbarMode="showOnDemand" />
+    <widget source="introduction" render="Label" position="85, 470" size="740, 30" zPosition="10" font="Regular; 24" halign="center" valign="center" backgroundColor="un9f1313" transparent="1" />
+    <eLabel name="new eLabel" position="55, 510" size="900, 2" backgroundColor="crypt_emm" />
+    <eLabel name="new eLabel" position="55, 458" size="900, 2" backgroundColor="crypt_emm" />
+  </screen>
   <screen name="NetworkAdapterTest" position="0,0" size="1280, 720" flags="wfNoBorder" title="Network test...">
     <eLabel position="55, 100" size="1100,2" backgroundColor="crypt_emm" />
     <widget name="Adaptertext" position="55, 120" size="650,25" zPosition="1" font="Regular;22" foregroundColor="grey" />
