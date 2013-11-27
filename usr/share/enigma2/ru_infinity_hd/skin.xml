@@ -2863,7 +2863,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <eLabel position="50, 625" size="1160, 1" backgroundColor="crypt_emm" />
     <eLabel position="845, 85" size="300, 22" text="About" halign="right" transparent="1" font="Named; 20" zPosition="2" foregroundColor="crypt_emm" />
     <eLabel position="680, 105" size="465, 2" backgroundColor="crypt_emm" />
-    <widget name="AboutScrollLabel" position="630,140" size="580,419" font="Regular;22" halign="center" zPosition="2" transparent="1" />
+    <widget name="AboutScrollLabel" position="630,140" size="580,449" font="Regular;22" halign="center" zPosition="2" transparent="1" />
   </screen>
   <screen name="VirtualZapConfig" position="0,0" size="1280, 720" backgroundColor="un44000000" flags="wfNoBorder" title="Virtual Zap Setup">
     <ePixmap pixmap="skin_default/icons/clock.png" position="50, 30" zPosition="3" size="14,14" alphatest="on" />
