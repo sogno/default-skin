@@ -3330,5 +3330,9 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/(count &gt; 7 and 2 or 3
     <widget name="entries" position="400,170" size="810,421" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" zPosition="2" />
     <eLabel name="new eLabel" position="50,625" size="1160,1" backgroundColor="crypt_emm" zPosition="1" />
     <eLabel name="new eLabel" position="910,80" size="300,22" font="Named;20" backgroundColor="black" halign="right" transparent="1" text="SoftCam Selection" foregroundColor="crypt_emm" />
+    <widget name="key_red" position="63, 635" size="265,28" font="Regular;22" valign="center" foregroundColor="red" zPosition="2" transparent="1" />
+    <widget name="key_green" position="338, 635" size="265,28" font="Regular;22" valign="center" foregroundColor="green" zPosition="2" transparent="1" />
+    <widget name="key_yellow" position="613, 635" size="265,28" font="Regular;22" valign="center" foregroundColor="yellow" zPosition="2" transparent="1" />
+    <widget name="key_blue" position="888, 635" size="265,28" font="Regular;22" valign="center" foregroundColor="blue" zPosition="2" transparent="1" />    
   </screen>
 </skin>
