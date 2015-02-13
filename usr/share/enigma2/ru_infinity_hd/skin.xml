@@ -1352,13 +1352,9 @@
     <widget source="global.CurrentTime" render="Label" position="155, 30" size="500, 22" font="Named; 17" halign="left" foregroundColor="white" backgroundColor="black" transparent="1">
       <convert type="ClockToText">Date</convert>
     </widget>
-    <widget position="70, 590" size="70, 24" source="ServiceEvent" render="Label" font="Named; 17" valign="top" halign="center" transparent="1" backgroundColor="black" foregroundColor="grey">
-      <convert type="EventTime">NextStartTime</convert>
-      <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget position="140, 590" size="436, 24" source="ServiceEvent" render="Label" font="Named; 17" valign="bottom" noWrap="1" transparent="1" backgroundColor="black" foregroundColor="grey">
-      <convert type="EventName">NextName</convert>
-    </widget>
+
+    <widget position="70, 590"  size="636, 24" source="ServiceEvent" render="NextEpgInfo" font="Named; 17" valign="bottom" noWrap="1" transparent="1" backgroundColor="black" foregroundColor="grey"/>
+   
     <widget source="ServiceEvent" render="Label" position="50, 196" zPosition="1" size="526, 22" font="Named; 21" halign="center" foregroundColor="white" transparent="1" backgroundColor="black">
       <convert type="ServiceName">Name</convert>
     </widget>
